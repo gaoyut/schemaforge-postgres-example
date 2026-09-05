@@ -24,7 +24,7 @@ make db-ps
 The default local connection is:
 
 ```text
-Host: localhost
+Host: host.docker.internal (from the Flyway container)
 Port: 5432
 Database: schemaforge_example
 User: schema_owner
@@ -32,7 +32,8 @@ Password: localdev
 ```
 
 These defaults are for local learning only. Override them with an untracked `.env`
-file when needed.
+file when needed. If you connect from a native client on the Mac, use
+`localhost:5432` instead.
 
 ## Build and run Flyway
 
@@ -71,4 +72,3 @@ new to apply.
 
 This repository intentionally uses PostgreSQL syntax and is separate from
 `schemaforge-sybase-example`; do not mix migrations between database engines.
-
